@@ -17,6 +17,8 @@ import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
 import { history } from "./helpers/history";
+import AuthVerify from "./common/AuthVerify";
+
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -120,6 +122,7 @@ const App = () => {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
+            <AuthVerify logOut={logOut}/>
           </Switch>
         </div>
       </div>
